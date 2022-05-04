@@ -1,11 +1,12 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //1.загадать число компьютером
         //2.ввести число пользователем
         //3.проверить больше меньше или равно пользовательское число компьютерному
@@ -70,8 +71,21 @@ public class Main {
             do {
                 System.out.println("у вас осталось попыток: " + leftCountTries);
                 System.out.print("введите число от " + leftSide + " до " + rightSide + ": ");
+
+                //user input
                 userNumber = scanner.nextInt();
-                //System.out.println(userNumber); for bot
+
+                //simple bot input
+                //userNumber = random.nextInt(rightSide - leftSide + 1) + leftSide;
+
+                //clever bot input
+                //userNumber = (leftSide + rightSide) / 2;
+
+                //System.out.println(userNumber);//output comp variant
+
+                //System.in.read();//wait press enter
+
+
             } while (userNumber < leftSide || userNumber > rightSide);
 
             if (userNumber == cheatNumber) {
